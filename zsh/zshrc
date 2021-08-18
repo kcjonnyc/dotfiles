@@ -3,5 +3,5 @@
 
 source $HOME/.zsh/variables.zsh
 
-plugins=(git zsh-auto-suggestions zsh-syntax-highlighting zsh-history-substring-search)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search)
 source $ZSH/oh-my-zsh.sh
