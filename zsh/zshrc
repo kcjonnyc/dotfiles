@@ -1,5 +1,7 @@
 # Configuration
 # --------------------------------------
 
+source $HOME/.zsh/config/variables.zsh
+
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
