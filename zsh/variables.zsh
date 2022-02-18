@@ -9,3 +9,5 @@ export ZSH_THEME="agnoster"
 export PATH="$HOME/.zsh/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
+
+alias grsm='git reset --soft $(git_main_branch)'
