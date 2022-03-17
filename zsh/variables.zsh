@@ -11,3 +11,24 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 
 alias grsm='git reset --soft $(git_main_branch)'
+
+function debug() {
+  local method="$1"
+
+  if [ "$method" != "server" ] && [ "$method" != "worker" ]; then
+    echo "Must specify either server or worker for debug"
+    return 1
+  fi
+
+  input=".spin/Procfile"
+  cmd=""
+  while IFS=read -r line
+  do
+    if [[ "$line" =~ $method:* ]]; then
+      cmd="${line:8}"
+    fi
+  done < "$input"
+
+  systemctl stop "proc-shopify--shopify@${method}.service"
+  eval cmd
+}
