@@ -20,15 +20,14 @@ function debug() {
     return 1
   fi
 
-  input=".spin/Procfile"
   cmd=""
-  while IFS=read -r line
+  cat .spin/Procfile | while read line
   do
     if [[ "$line" =~ $method:* ]]; then
       cmd="${line:8}"
     fi
-  done < "$input"
+  done
 
   systemctl stop "proc-shopify--shopify@${method}.service"
-  eval cmd
+  eval $cmd
 }
