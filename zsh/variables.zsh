@@ -10,6 +10,10 @@ export PATH="$HOME/.zsh/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 
+# Editor
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 alias grsm='git reset --soft $(git_main_branch)'
 
 function debug() {
